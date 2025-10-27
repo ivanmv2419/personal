@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Freeway Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, #0B5CAB 0%, #0A4A8A 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .form-header p {
+            font-size: 16px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .form-body {
+            padding: 40px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background-color: #fafbfc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0B5CAB;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(11, 92, 171, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230B5CAB' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 40px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, #FF8555 0%, #FF6B35 100%);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .required {
+            color: #FF6B35;
+            margin-left: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .form-container {
+                border-radius: 0;
+            }
+
+            .form-header {
+                padding: 30px 20px;
+            }
+
+            .form-header h1 {
+                font-size: 24px;
+            }
+
+            .form-body {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Solicita Información</h1>
+            <p>Nuestro equipo de consultores Salesforce están listos para ayudarte</p>
+        </div>
+
+        <div class="form-body">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdL00000fQR6b" method="POST">
+                
+                <input type="hidden" name="oid" value="00DdL00000fQR6b">
+                <input type="hidden" name="retURL" value="http://">
+                
+                <!-- Campo lead_source oculto con valor "Web" -->
+                <input type="hidden" id="lead_source" name="lead_source" value="Web">
+
+                <div class="form-group">
+                    <label for="first_name">Nombre <span class="required">*</span></label>
+                    <input id="first_name" maxlength="40" name="first_name" size="20" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Apellidos <span class="required">*</span></label>
+                    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Compañía <span class="required">*</span></label>
+                    <input id="company" maxlength="40" name="company" size="20" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input id="email" maxlength="80" name="email" size="20" type="email" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Teléfono <span class="required">*</span></label>
+                    <input id="phone" maxlength="40" name="phone" size="20" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="state_code">Estado/Provincia <span class="required">*</span></label>
+                    <select id="state_code" name="state_code" required>
+                        <option value="">--Selecciona un estado--</option>
+                        <option value="AG">Aguascalientes</option>
+                        <option value="BC">Baja California</option>
+                        <option value="BS">Baja California Sur</option>
+                        <option value="CH">Chihuahua</option>
+                        <option value="CL">Colima</option>
+                        <option value="CM">Campeche</option>
+                        <option value="CO">Coahuila</option>
+                        <option value="CS">Chiapas</option>
+                        <option value="DF">CDMX</option>
+                        <option value="DG">Durango</option>
+                        <option value="GR">Guerrero</option>
+                        <option value="GT">Guanajuato</option>
+                        <option value="HG">Hidalgo</option>
+                        <option value="JA">Jalisco</option>
+                        <option value="ME">Estado de México</option>
+                        <option value="MI">Michoacán</option>
+                        <option value="MO">Morelos</option>
+                        <option value="NA">Nayarit</option>
+                        <option value="NL">Nuevo León</option>
+                        <option value="OA">Oaxaca</option>
+                        <option value="PB">Puebla</option>
+                        <option value="QE">Querétaro</option>
+                        <option value="QR">Quintana Roo</option>
+                        <option value="SI">Sinaloa</option>
+                        <option value="SL">San Luis Potosí</option>
+                        <option value="SO">Sonora</option>
+                        <option value="TB">Tabasco</option>
+                        <option value="TL">Tlaxcala</option>
+                        <option value="TM">Tamaulipas</option>
+                        <option value="VE">Veracruz</option>
+                        <option value="YU">Yucatán</option>
+                        <option value="ZA">Zacatecas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="00NdL00001gLqFp">Producto de Interés</label>
+                    <select id="00NdL00001gLqFp" name="00NdL00001gLqFp" title="Producto de Interés">
+                        <option value="">--Selecciona una opción--</option>
+                        <option value="Cableado y conectores">Cableado y conectores</option>
+                        <option value="Componentes electrónicos">Componentes electrónicos</option>
+                        <option value="Iluminación industrial">Iluminación industrial</option>
+                        <option value="Transformadores eléctricos">Transformadores eléctricos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="00NdL00001gM1ft">Volumen estimado de compra</label>
+                    <select id="00NdL00001gM1ft" name="00NdL00001gM1ft" title="Volumen estimado de compra">
+                        <option value="">--Selecciona una opción--</option>
+                        <option value="Bajo (hasta $50,000 MXN)">Bajo (hasta $50,000 MXN)</option>
+                        <option value="Medio ($50,000 – $200,000 MXN)">Medio ($50,000 – $200,000 MXN)</option>
+                        <option value="Alto (más de $200,000 MXN)">Alto (más de $200,000 MXN)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea name="description" id="description" placeholder="Cuéntanos más sobre tu proyecto o necesidad..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Enviar Solicitud</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
