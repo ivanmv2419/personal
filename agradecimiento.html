@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por contactarnos - Freeway Industries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0B5CAB 0%, #0A4A8A 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            animation: slideIn 0.6s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            background: linear-gradient(135deg, #0B5CAB 0%, #0A4A8A 100%);
+            padding: 50px 30px 40px;
+            position: relative;
+        }
+
+        .icon-circle {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease 0.3s backwards;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .checkmark {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .success-icon h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: fadeIn 0.6s ease 0.5s backwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            padding: 40px 40px 50px;
+            animation: fadeIn 0.6s ease 0.7s backwards;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #5a6c7d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #FF6B35;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .info-box h3 {
+            color: #0B5CAB;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            color: #5a6c7d;
+            font-size: 15px;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .info-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0B5CAB;
+            border: 2px solid #0B5CAB;
+        }
+
+        .btn-secondary:hover {
+            background: #0B5CAB;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(11, 92, 171, 0.2);
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+            font-size: 14px;
+            color: #5a6c7d;
+        }
+
+        .contact-info a {
+            color: #0B5CAB;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            color: #FF6B35;
+        }
+
+        @media (max-width: 640px) {
+            .success-icon h1 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 30px 25px 40px;
+            }
+
+            .content h2 {
+                font-size: 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-icon">
+            <div class="icon-circle">
+                <div class="checkmark"></div>
+            </div>
+            <h1>¡Solicitud Recibida!</h1>
+        </div>
+
+        <div class="content">
+            <h2>Gracias por contactar a Freeway Industries</h2>
+            <p>Hemos recibido tu información correctamente y será procesada a la brevedad posible.</p>
+
+            <div class="info-box">
+                <h3>¿Qué sigue?</h3>
+                <ul>
+                    <li>Revisaremos tu solicitud en las próximas 24 horas hábiles</li>
+                    <li>Un miembro de nuestro equipo se pondrá en contacto contigo</li>
+                    <li>Recibirás un correo de confirmación con los detalles</li>
+                    <li>Podrás dar seguimiento a tu solicitud en todo momento</li>
+                </ul>
+            </div>
+
+            <p><strong>Tiempo de respuesta estimado:</strong> 24-48 horas hábiles</p>
+
+            <div class="buttons">
+                <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
+                <a href="contactanos.html" class="btn btn-secondary">Nueva Solicitud</a>
+            </div>
+
+            <div class="contact-info">
+                <p><strong>¿Necesitas ayuda urgente?</strong></p>
+                <p>Contáctanos directamente: <a href="tel:+525512345678">+52 55 1234 5678</a></p>
+                <p>Email: <a href="mailto:contacto@freewayindustries.com">contacto@freewayindustries.com</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
